@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="applanches.Home">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="LightGray">
+            <Image Source="logo" WidthRequest="200" HeightRequest="200"/>
+            <Label Text="Bem vindo ao App mais Famoso de Lanches" Margin="15,10,15,0" TextColor="black" FontAttributes="Bold" FontSize="25" HorizontalTextAlignment="Center" />
+            <Button x:Name="btnPedido" BackgroundColor="OrangeRed" Margin="20,0,20,50" VerticalOptions="EndAndExpand" Text="Faça seu Pedido" TextColor="#fff" CornerRadius="10" Clicked="btnPedido_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

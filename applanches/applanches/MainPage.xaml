@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:applanches"
+             Title="Selecione seu Lanche"
+             x:Class="applanches.MainPage">
+    <ListView x:Name="listLanches" HasUnevenRows="True" ItemSelected="Handle_ItemSelected" SeparatorColor="DarkBlue">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <Image Source="{Binding ImagemUrl}" HeightRequest="100" WidthRequest="100"/>
+                        <Label Text="{Binding Nome}" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

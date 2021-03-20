@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="applanches.Drinks">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <StackLayout Margin="0,10,0,0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Frame BackgroundColor="WhiteSmoke" BorderColor="OrangeRed" HasShadow="True" Margin="10,0,10,0" HeightRequest="100">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="coca"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame BackgroundColor="Transparent" BorderColor="OrangeRed" HasShadow="True" Margin="10,0,10,0" HeightRequest="100">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="uva"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblPriceCoca" FontAttributes="Bold" Margin="30,0,0,0" Text="{Binding TextoCocaCola}"/>
+                <Label x:Name="lblPriceUva" FontAttributes="Bold" Margin="80,0,0,0" HorizontalTextAlignment="End" Text="{Binding TextoCocaCola}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,9 +1,5 @@
 ﻿using applanches.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,6 +10,7 @@ namespace applanches
     public partial class LancheDetailsPage : ContentPage
     {
         Lanche _lanche;
+        private string _acrescimos;
         public LancheDetailsPage(Lanche lanche)
         {
             InitializeComponent();
@@ -21,18 +18,11 @@ namespace applanches
             this.BindingContext = _lanche;
 
         }
-
-        async void btnProximo_Clicked(object sender, EventArgs e)
-        {
-            if (_lanche == null)
-                return;
-
-            await this.Navigation.PushAsync(new LanchePedidoPage(_lanche));
-        }
-
         async void btnRefri_Clicked(object sender, EventArgs e)
         {
-            await this.Navigation.PushAsync(new Drinks(_lanche));
+            if (swMaion.On && _lanche.TextoMaionese != null)
+                _acrescimos = _lanche.TextoMaionese;
+            await this.Navigation.PushAsync(new Drinks(_lanche, _acrescimos));
         }
     }
 }

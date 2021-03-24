@@ -4,22 +4,33 @@
              Title="{Binding Nome}"
              x:Class="applanches.LancheDetailsPage">
     <ContentPage.Content>
-        <StackLayout Padding="10">
+        <StackLayout Padding="10"  BackgroundColor="Transparent">
             <Image Source="{Binding ImagemUrl}" HeightRequest="100" WidthRequest="100"/>
-            <TableView>
-                <TableSection Title="Acréscimos">
-                    <SwitchCell Text="{Binding TextoMaionese}" On="{Binding TemMaionese, Mode=TwoWay}"></SwitchCell>
-                    <SwitchCell Text="{Binding TextoBacon}" On="{Binding TemBacon, Mode=TwoWay}"></SwitchCell>
-                    <SwitchCell Text="{Binding TextoOvo}" On="{Binding TemOvo, Mode=TwoWay}"></SwitchCell>
-                    <SwitchCell Text="{Binding TextoCheddar}" On="{Binding TemCheddar, Mode=TwoWay}"></SwitchCell>
-                    <SwitchCell Text="{Binding TextoCatupiry}" On="{Binding TemCatupiry, Mode=TwoWay}"></SwitchCell>
-                    <TextCell Text="{Binding ValorTotal}" TextColor="Blue"></TextCell>
-                </TableSection>
-            </TableView>
-            <Button x:Name="btnProximo" Text="Próximo" Clicked="btnProximo_Clicked" VerticalOptions="End"
-                    TextColor="White" BackgroundColor="DarkGreen" FontAttributes="Bold"/>
-            <Button x:Name="btnRefri" Text="Bebidas"  VerticalOptions="End"
+            <Label Text="Você pode acrescentar alguma coisa em seu lanche, aproveite. " FontSize="16" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <StackLayout Margin="0,30,0,0">
+                <Expander>
+                    <Expander.Header>
+                        <StackLayout Orientation="Horizontal">
+                        <Label Text="Acréscimos" FontSize="18" FontAttributes="Bold" TextColor="Red"/>
+                        <Image Source="expander.png"/>
+                        </StackLayout>
+                    </Expander.Header>
+                        <TableView>
+                        <TableSection x:Name="tblValue">
+                            <SwitchCell x:Name="swMaion" Text="{Binding TextoMaionese}" On="{Binding TemMaionese, Mode=TwoWay}"></SwitchCell>
+                            <SwitchCell x:Name="swBac" Text="{Binding TextoBacon}" On="{Binding TemBacon, Mode=TwoWay}"></SwitchCell>
+                            <SwitchCell x:Name="swOvo" Text="{Binding TextoOvo}" On="{Binding TemOvo, Mode=TwoWay}"></SwitchCell>
+                            <SwitchCell x:Name="swChed" Text="{Binding TextoCheddar}" On="{Binding TemCheddar, Mode=TwoWay}"></SwitchCell>
+                            <SwitchCell Text="{Binding TextoCatupiry}" On="{Binding TemCatupiry, Mode=TwoWay}"></SwitchCell>
+                            <TextCell Text="{Binding ValorTotal}" TextColor="Blue"></TextCell>
+                        </TableSection>
+                    </TableView>
+                </Expander>
+            </StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand">
+            <Button x:Name="btnRefri" Text="Continue o Pedido"  VerticalOptions="End"
                     TextColor="White" BackgroundColor="#707070" FontAttributes="Bold" Clicked="btnRefri_Clicked"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
